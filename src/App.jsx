@@ -3,17 +3,26 @@ import { useState } from 'react';
 import './App.css'
 
 function App() {
-  let Counter = 0;
+  
 
-  const [increment,setIncrement] = useState(0);
+  const [count,setCount] = useState(0);
+
+  function increasingResult(){
+    setCount(count + 1);
+  }
+
+  function decreasingResult(){
+    setCount(count - 1);
+  }
 
   return (
-    <div>
+    <div className='counter-wrapper'>
     <h1>Counter Web App</h1>
-    <p>Current : {Counter}</p>
-    <button value={increment} onClick={(i)=>setIncrement(i+1)}>Increment</button>
-    <button>Decrement</button>
+    <p>Current : {count}</p>
+    <button  onClick={increasingResult}>Increment</button>
+    <button onClick={decreasingResult}>Decrement</button>
     </div>
+    
   )
 }
 
